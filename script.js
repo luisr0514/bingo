@@ -3,6 +3,9 @@ function saveNames() {
     document.getElementById("botonjugador2").disabled = false
     document.getElementById("botonjugador3").disabled = false
     document.getElementById("botonjugador4").disabled = false
+    document.getElementById("generar").style.display = "block"
+    document.getElementById("numero").style.display = "block"
+    document.getElementById("turno").style.display = "block"
     var name1 = document.getElementById("name1").value;
     var name2 = document.getElementById("name2").value;
     var name3 = document.getElementById("name3").value;
@@ -139,6 +142,31 @@ function saveNames() {
             }
         }
 
+    }
+    const boton = document.getElementById('generar');
+    const numero = document.getElementById('numero');
+    const turno = document.getElementById('turno')
+
+    let numerosGenerados = [];
+    boton.addEventListener('click', () => {
+        if (numerosGenerados.length < 25) {
+            let numAleatorio = generarNumeroAleatorioBingo();
+            numerosGenerados.push(numAleatorio);
+            numero.textContent = numAleatorio;
+            turno.textContent = " turno" + numerosGenerados.length
+        } else {
+            
+            alert('Ya se han generado los 50 números aleatorios');
+        }
+    
+    });
+
+    function generarNumeroAleatorioBingo() {
+        let numAleatorio = Math.floor(Math.random() * 50) + 1;
+        while (numerosGenerados.includes(numAleatorio)) {
+            numAleatorio = Math.floor(Math.random() * 50) + 1;
+        }
+        return numAleatorio;
     }
 }
 function mostrarMatriz1(){
