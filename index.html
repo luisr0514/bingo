@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo-copia</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div>
+        <form id="formulario" style="border: 2px solid black; padding: 10px;" >
+            <label for="nombre1">Jugador 1</label><br>
+            <input type="text" id="name1" name="name1"><br>
+            <label for="nombre2"> Jugador 2</label><br>
+            <input type="text" name="name2" id="name2"><br>
+            <label for="nombre3">Jugador 3</label><br>
+            <input type="text" name="name3" id="name3"><br>
+            <label for="nombre4">Jugador 4</label><br>
+            <input type="text" name="name4" id="name4"><br>
+            Elija de cuantas columnas y filas sera el carton <br>
+            <select name="" id="TipoDeCarton">
+                <option value="0"></option>
+                <option value="3">3 filas y 3 columnas</option>
+                <option value="4">4 filas y 4 columnas</option>
+                <option value="5">5 filas y 5 columnas</option>
+            </select><br><br>
+            <input type="button" value="Jugar" onclick="saveNames()" >
+        </form>
+    </div>
+    <!-- <script src="./script.js"></script> -->
+    <div class="carton">
+        <table id="TablaCarton"></table>
+    </div>
+
+
+
+    
+</body>
+</html>
