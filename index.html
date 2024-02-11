@@ -11,13 +11,13 @@
     <div>
         <form id="formulario" style="border: 2px solid black; padding: 10px;" >
             <label for="nombre1">Jugador 1</label><br>
-            <input type="text" id="name1" name="name1"><br>
+            <input type="text" id="name1" name="name1" required><br>
             <label for="nombre2"> Jugador 2</label><br>
-            <input type="text" name="name2" id="name2"><br>
+            <input type="text" name="name2" id="name2"required><br>
             <label for="nombre3">Jugador 3</label><br>
-            <input type="text" name="name3" id="name3"><br>
+            <input type="text" name="name3" id="name3"required><br>
             <label for="nombre4">Jugador 4</label><br>
-            <input type="text" name="name4" id="name4"><br>
+            <input type="text" name="name4" id="name4"required><br>
             Elija de cuantas columnas y filas sera el carton <br>
             <select name="" id="TipoDeCarton">
                 <option value="0"></option>
@@ -25,14 +25,24 @@
                 <option value="4">4 filas y 4 columnas</option>
                 <option value="5">5 filas y 5 columnas</option>
             </select><br><br>
-            <input type="button" value="Jugar" onclick="saveNames()" >
+            <button type="submit" onclick="saveNames(),this.disabled = true" >jugar</button>
         </form>
     </div>
     <!-- <script src="./script.js"></script> -->
+    <div>
+        <button id="botonjugador" disabled=" true" onclick="mostrarMatriz1()">Jugador 1</button>
+        <button id="botonjugador2" disabled=" true"onclick="mostrarMatriz2()">Jugador 2</button>
+        <button id="botonjugador3" disabled=" true"onclick="mostrarMatriz3()">Jugador 3</button>
+        <button id="botonjugador4" disabled=" true"onclick="mostrarMatriz4()">Jugador 4</button>
+    </div>
+
     <div class="carton">
         <table id="TablaCarton"></table>
     </div>
 
+    <div>
+        
+    </div>
 
 
     

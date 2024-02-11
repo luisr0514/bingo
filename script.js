@@ -1,8 +1,17 @@
 function saveNames() {
+    document.getElementById("botonjugador").disabled = false
+    document.getElementById("botonjugador2").disabled = false
+    document.getElementById("botonjugador3").disabled = false
+    document.getElementById("botonjugador4").disabled = false
     var name1 = document.getElementById("name1").value;
     var name2 = document.getElementById("name2").value;
     var name3 = document.getElementById("name3").value;
     var name4 = document.getElementById("name4").value;
+    // document.getElementById("botonjugador").innerHTML = name1
+    // document.getElementById("botonjugador2").innerHTML = name2
+    // document.getElementById("botonjugador3").innerHTML = name3
+    // document.getElementById("botonjugador4").innerHTML = name4
+
     var TipoDeCarton = document.getElementById("TipoDeCarton").value;
     console.log(name1,name2,name3,name4);
     console.log(TipoDeCarton);
@@ -37,12 +46,17 @@ function saveNames() {
 
     // Genera una matriz cuadrada (NxN) aleatoria
     var matriz = generarArregloAleatorio(TipoDeCarton);
+    var matriz2 = generarArregloAleatorio(TipoDeCarton);
+    var matriz3 = generarArregloAleatorio(TipoDeCarton);
+    var matriz4 = generarArregloAleatorio(TipoDeCarton);
+    
     console.log(matriz);
 
     // Visualiza la matriz en pantalla
-    function visualizarMatriz(matriz) {
+    function visualizarMatriz(matriz,m) {
     var n = matriz.length;
     var tabla = document.createElement('table');
+    tabla.setAttribute("id",m)
     tabla.className = 'matriz';
 
     for (var i = 0; i < n; i++) {
@@ -60,7 +74,11 @@ function saveNames() {
 
     document.body.appendChild(tabla);
     }
-    visualizarMatriz(matriz);
+    visualizarMatriz(matriz,"matriz1");
+    visualizarMatriz(matriz2,"matriz2");
+    visualizarMatriz(matriz3,"matriz3");
+    visualizarMatriz(matriz4,"matriz4");
+    mostrarMatriz1()
 
     // Declara la variable global "tienePuntoDiagonal"
     var tienePuntoDiagonalP = false;
@@ -122,4 +140,44 @@ function saveNames() {
         }
 
     }
+}
+function mostrarMatriz1(){
+    document.getElementById("matriz1").style.display = "table"
+    document.getElementById("matriz2").style.display = "none"
+    document.getElementById("matriz3").style.display = "none"
+    document.getElementById("matriz4").style.display = "none"
+    document.getElementById("botonjugador").disabled = true
+    document.getElementById("botonjugador2").disabled = false
+    document.getElementById("botonjugador3").disabled = false
+    document.getElementById("botonjugador4").disabled = false
+}
+function mostrarMatriz2(){
+    document.getElementById("matriz1").style.display = "none"
+    document.getElementById("matriz2").style.display = "table"
+    document.getElementById("matriz3").style.display = "none"
+    document.getElementById("matriz4").style.display = "none"
+    document.getElementById("botonjugador").disabled = false
+    document.getElementById("botonjugador2").disabled = true
+    document.getElementById("botonjugador3").disabled = false
+    document.getElementById("botonjugador4").disabled = false
+}
+function mostrarMatriz3(){
+    document.getElementById("matriz1").style.display = "none"
+    document.getElementById("matriz2").style.display = "none"
+    document.getElementById("matriz3").style.display = "table"
+    document.getElementById("matriz4").style.display = "none"
+    document.getElementById("botonjugador").disabled = false
+    document.getElementById("botonjugador2").disabled = false
+    document.getElementById("botonjugador3").disabled = true
+    document.getElementById("botonjugador4").disabled = false
+}
+function mostrarMatriz4(){
+    document.getElementById("matriz1").style.display = "none"
+    document.getElementById("matriz2").style.display = "none"
+    document.getElementById("matriz3").style.display = "none"
+    document.getElementById("matriz4").style.display = "table"
+    document.getElementById("botonjugador").disabled = false
+    document.getElementById("botonjugador2").disabled = false
+    document.getElementById("botonjugador3").disabled = false
+    document.getElementById("botonjugador4").disabled = true
 }
