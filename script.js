@@ -83,8 +83,7 @@ function generarNumeroAleatorio() {
     visualizarMatriz(matriz3,"matriz3");
     visualizarMatriz(matriz4,"matriz4");
     mostrarMatriz1();
-    // Verifica si se ha completado una fila, columna o diagonal
-    // Verifica si se ha completado una fila, columna o diagonal
+
     function verificarCompletado(tabla, id) {
         var n = tabla.rows.length;
         var puntos = 0;
@@ -178,6 +177,7 @@ function generarNumeroAleatorio() {
             console.log("Puntos totales en la tabla " + id + ": " + puntos);
         }
     }
+    
     const boton = document.getElementById('generar');
     const numero = document.getElementById('numero');
     const turno = document.getElementById('turno')
