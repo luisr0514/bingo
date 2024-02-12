@@ -35,3 +35,25 @@
     font-size: 18pt;
     pointer-events: none;
 }
+body{
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+    background-color: rgb(150, 200, 200);
+
+}
+#formulario{
+    margin-left: 30%;
+    margin-right: 30%;
+    justify-content:center ;
+
+}
+#cambio{
+    margin-left: 30%;
+    margin-right: 30%;
+    justify-content:center ;
+}
+#juego{
+    display: flex;
+    justify-content: center;
+}
